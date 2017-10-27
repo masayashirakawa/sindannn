@@ -1,0 +1,82 @@
+[
+    {
+        "no":"A",
+        "title":"インドアよりもアウトドアの遊びのほうが好きだ",
+        "choice1":"YES",
+        "choice2":"NO",
+        "YES":1,
+        "NO":3
+    },
+    
+    {
+        "no":"B",
+        "title":"好きな食べ物でも2日連続だと飽きてしまう",
+        "choice1":"YES",
+        "choice2":"NO",       
+        "YES":2,
+        "NO":4
+    },
+    
+    {
+        "no":"C",
+        "title":"約束当日にドタキャンしたことが何回かある",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":"cat",
+        "NO":5
+    },
+    
+    {
+        "no":"D",
+        "title":"青や水色などのさわやかな色が好きだ",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":4,
+        "NO":6
+    },
+    
+    {
+        "no":"E",
+        "title":"一人より大勢でいるほうが好きだ",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":5,
+        "NO":7
+    },
+    
+    {
+        "no":"F",
+        "title":"人見知りはしないほうだ",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":"dog",
+        "NO":8
+    },
+    
+    {
+        "no":"G",
+        "title":"アクション映画が好きだ",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":7,
+        "NO":"snake"
+    },
+    
+    {
+        "no":"H",
+        "title":"夏休みの宿題はぎりぎりまで手を付けないタイプだ",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":8,
+        "NO":"inosisi"
+    },
+        
+    {
+        "no":"I",
+        "title":"サプライズをされると嬉しい",
+        "choice1":"YES",
+        "choice2":"NO",        
+        "YES":"rabbit",
+        "NO":"hituzi"
+    }
+]

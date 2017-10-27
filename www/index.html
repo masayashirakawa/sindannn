@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+         //問題データを取得
+        var question;   //問題データ
+        
+        $.getJSON("date.json",function(result){
+            question = result;
+        })
+        
+        //スタートボタンが押されたとき
+        var current;    //現在の問題番号
+        function start(){
+            
+            current = 0;
+            
+            //問題ページに遷移
+            document.getElementById("navi").pushPage("question2.html");
+        }
+         //問題ページに問題を表示する
+        document.addEventListener('init',function(evet){
+            var page = event.target;  //event.target　どのページが開かれたか
+            if(page.id=="question2-page"){//questionページの時
+                console.log("A");
+                //jsonのデータをページにセットする
+                var title ="設問" + question[current].no + ":" + question[current].title;
+                page.querySelector('#title').innerHTML = title;
+                page.querySelector('#btn_a').innerHTML = question[current].choice1;
+                page.querySelector('#btn_b').innerHTML = question[current].choice2;               
+            }
+        })
+        
+        function select(choiceNo){
+            //var icon;
+            //yesかnoか判断する
+            if(choiceNo == 1){
+                if(isNaN(question[current].YES)){
+                    //数値以外の場合＝結果を表示する
+                    var kekka = question[current].YES;
+                    document.getElementById("navi").pushPage(kekka + ".html");
+                    
+                }else{
+                    //数値の場合＝次の設問へ                    
+                    current = question[current].YES;
+                    //問題ページに遷移
+                    document.getElementById("navi").pushPage("question2.html");
+                }    
+            }
+            if(choiceNo == 2){
+                if(isNaN(question[current].NO)){
+                    //数値以外の場合＝結果を表示する
+                    var kekka = question[current].NO;
+                    document.getElementById("navi").pushPage(kekka + ".html");
+                    
+                    
+                }else{
+                    //数値の場合＝次の設問へ
+                    current = question[current].NO;
+                    //問題ページに遷移
+                    document.getElementById("navi").pushPage("question2.html");
+                }
+            }
+        }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navi" page="top1.html">
+ </ons-navigator>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
